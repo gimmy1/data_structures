@@ -1,4 +1,4 @@
-# Create a node class
+
 class Node:
     '''
         Node Class
@@ -31,7 +31,7 @@ class Node:
     def set_next_node(self, next_node):
         self.next_node = next_node
 
-# my_node = Node(44)
+my_node = Node(44)
 
 # print(my_node.get_value())
 # print(my_node.get_next_node())

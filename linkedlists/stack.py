@@ -9,10 +9,11 @@ class Stack:
 
     # helper methods - is_empty, has_space
     '''
-    def __init__(self, top_item, limit=100, size=0):
-        self.top_item = top_item
-        self.limit = limit
-        self.size = size
+    def __init__(self, name):
+        self.size = 0
+        self.top_item = None
+        self.limit = 1000
+        self.name = name
 
     def push(self, value):
         '''
@@ -25,10 +26,16 @@ class Stack:
             item.set_next_node(self.top_item)
             self.top_item = item
             self.size += 1
-            print("Adding {} to the pizza stack!".format(value))
+            # print("Adding {} to the pizza stack!".format(value))
         else:
             print("No room for {}!".format(value))
     
+    def get_name(self):
+        return self.name
+
+    def get_size(self):
+        return self.size
+        
     def peek(self):
         if not self.is_empty():
             return self.top_item.get_value()
@@ -54,10 +61,19 @@ class Stack:
     
     def is_empty(self):
         return self.size == 0
+
+    def print_items(self):
+        pointer = self.top_item
+        print_list = []
+        while(pointer):
+            print_list.append(pointer.get_value())
+            pointer = pointer.get_next_node()
+            print_list.reverse()
+        print("{0} Stack: {1}".format(self.get_name(), print_list))
     
 # Defining an empty stack
-stack = Stack(6)
-print(stack)
+# stack = Stack(6)
+# print(stack)
 # Adding as they are ready until we have 
 # stack.push("#1")
 # stack.push("#2")
@@ -78,4 +94,4 @@ print(stack)
 # stack.pop()
 # stack.pop()
 
-stack.pop()
+# stack.pop()

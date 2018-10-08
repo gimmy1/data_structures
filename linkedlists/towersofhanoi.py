@@ -53,7 +53,7 @@ while right_stack.get_size() < num_disks:
         print(stack.print_items())
     
     while True:
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
         print("\n\nWhich stack would you like to move from?\n\n")
         from_stack = get_input()
         # import pdb; pdb.set_trace()
